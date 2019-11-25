@@ -27,8 +27,8 @@ struct Constants
   /// Colors used in the App.
   struct Colors
   {
-    static let backgroundColor = UIColor(red: 36/255, green: 140/255, blue: 79/255, alpha: 1.0)
-    static let splashColor = UIColor(red: 46/255, green: 194/255, blue: 111/255, alpha: 1.0)
+    static let backgroundColor = UIColor(red: 247/255, green: 2/255, blue: 102/255, alpha: 1.0)
+    static let splashColor = UIColor(red: 247/255, green: 2/255, blue: 102/255, alpha: 1.0)
   }
   
   /// Messages used in the App.
@@ -42,8 +42,8 @@ struct Constants
     
     struct General
     {
-
-      
+      static let navTextFirst = NSLocalizedString("WIKI", comment: "")
+      static let navTextLast = NSLocalizedString("DOGS", comment: "")
     }
     
     struct Api {

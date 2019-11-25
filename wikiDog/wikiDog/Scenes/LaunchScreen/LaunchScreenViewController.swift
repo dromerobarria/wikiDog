@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Lottie
+import Lottie
 
 class LaunchScreenViewController: UIViewController {
 
@@ -16,7 +16,7 @@ class LaunchScreenViewController: UIViewController {
       
         self.view.backgroundColor = Constants.Colors.splashColor
       
-        /*
+        
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 35)
@@ -32,12 +32,12 @@ class LaunchScreenViewController: UIViewController {
 
         
         let starAnimationView = AnimationView()
-        let starAnimation = Animation.named("avocado")
+        let starAnimation = Animation.named("doggie")
         starAnimationView.animation = starAnimation
         starAnimationView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 400)
         //starAnimationView.center = self.view.center
         starAnimationView.contentMode = .scaleAspectFill
-        starAnimationView.animationSpeed = 1
+      starAnimationView.animationSpeed = 0.4
        
         starAnimationView.play { (finished) in
           /// Animation finished
@@ -59,7 +59,7 @@ class LaunchScreenViewController: UIViewController {
         stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        */
+        
     }
 
 }

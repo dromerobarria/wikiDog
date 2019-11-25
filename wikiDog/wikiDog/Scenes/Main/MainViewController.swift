@@ -11,13 +11,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol MainDisplayLogic: class
 {
+  func errorFetchDogs(viewModel: Main.Requestbreeds.ViewModel)
+  func successFetchDogs(viewModel: Main.Requestbreeds.ViewModel)
  
+  func successSelectDogs(viewModel: Main.SelectBreeds.ViewModel)
 }
 
-class MainViewController: UIViewController, MainDisplayLogic,ActivityIndicatorPresenter
+class MainViewController: UITableViewController, MainDisplayLogic,ActivityIndicatorPresenter
 {
   var interactor: MainBusinessLogic?
   var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
@@ -25,7 +29,11 @@ class MainViewController: UIViewController, MainDisplayLogic,ActivityIndicatorPr
   
   // MARK: Object lifecycle
   var activityIndicator = UIActivityIndicatorView()
+  let realm = try! Realm()
+  var breeds: Results<Breeds>!
   
+  static let tableViewCellIdentifier = "cellID"
+  private static let nibName = "TableCell"
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
@@ -72,24 +80,114 @@ class MainViewController: UIViewController, MainDisplayLogic,ActivityIndicatorPr
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    configureView()
     configureNavegationBar()
   }
+
   
- /// NavigationBar
+  func configureView()
+  {
+    
+    self.title = Constants.Messages.General.navTitle
+    self.breeds = Breeds.all().sorted(byKeyPath: "name", ascending: true)
+  
+    let nib = UINib(nibName: MainViewController.nibName, bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: MainViewController.tableViewCellIdentifier)
+    
+    tableView.showsVerticalScrollIndicator = false
+    tableView.backgroundColor =  .white
+    tableView.separatorStyle = .none
+    
+    self.view.backgroundColor = Constants.Colors.backgroundColor
+    
+    self.showActivityIndicator()
+    let request = Main.Requestbreeds.Request()
+    interactor?.loadBreedsRequest(request: request)
+  }
+    
+    /// NavigationBar
   func configureNavegationBar()
   {
     
     let navLabel = UILabel()
     let fullString = NSMutableAttributedString(string: Constants.Messages.General.navTextFirst)
-    let image1Attachment = NSTextAttachment()
-    image1Attachment.image = Constants.Images.ic_asset_icon
-    let image1String = NSAttributedString(attachment: image1Attachment)
-    fullString.append(image1String)
     fullString.append(NSAttributedString(string: Constants.Messages.General.navTextLast))
     navLabel.attributedText = fullString
     self.navigationItem.titleView = navLabel
     
-    
+    navigationController?.navigationBar.backgroundColor = Constants.Colors.backgroundColor
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Constants.Colors.backgroundColor]
   }
+  
+  
+  func successFetchDogs(viewModel: Main.Requestbreeds.ViewModel)
+   {
+     self.hideActivityIndicator()
+     self.breeds = viewModel.breeds.sorted(byKeyPath: "name", ascending: true)
+     self.tableView.reloadData()
+   }
+   func errorFetchDogs(viewModel: Main.Requestbreeds.ViewModel)
+   {
+     self.hideActivityIndicator()
+     self.alert(message: viewModel.message)
+   }
+   
+   func successSelectDogs(viewModel: Main.SelectBreeds.ViewModel)
+   {
+      //router?.routeToDogsImages(segue: nil)
+   }
 }
+
+extension MainViewController {
+   
+   // MARK: - Table view data source
+  override func numberOfSections(in tableView: UITableView) -> Int
+   {
+     guard self.breeds.isEmpty  else {
+       return self.breeds.count
+     }
+     return 0
+   }
+  
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
+    {
+      return 1
+    }
+    
+   override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
+    {
+      let footerView = UIView(frame: CGRect(x:0, y:0, width:tableView.frame.size.width, height:1))
+      footerView.backgroundColor = UIColor.clear
+      return footerView
+    }
+  
+   
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+   {
+     return 1
+   }
+   
+   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     if self.breeds[indexPath.section].types.count > 0
+     {
+        return 100
+     }else
+     {
+      return 50
+     }
+   }
+   
+   
+   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+   {
+    let cell = tableView.dequeueReusableCell(withIdentifier: MainViewController.tableViewCellIdentifier, for: indexPath) as! BreedCell
+     cell.selectionStyle = .none
+     cell.breed = self.breeds[indexPath.section]
+     return cell
+   }
+   
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     let request = Main.SelectBreeds.Request(name: self.breeds[indexPath.section].name)
+     interactor?.selectBreeds(request: request)
+   }
+ }

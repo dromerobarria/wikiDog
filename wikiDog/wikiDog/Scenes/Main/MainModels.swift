@@ -11,9 +11,40 @@
 //
 
 import UIKit
+import RealmSwift
 
 enum Main
 {
   // MARK: Use cases
+  enum Requestbreeds
+  {
+    struct Request
+    {
+    }
+    struct Response
+    {
+      var breeds: Results<Breeds>
+      var isError: Bool
+      var message: String
+    }
+    struct ViewModel
+    {
+      var breeds: Results<Breeds>
+      var message: String
+    }
+  }
   
+  enum SelectBreeds
+  {
+    struct Request
+    {
+      var name: String
+    }
+    struct Response
+    {
+    }
+    struct ViewModel
+    {
+    }
+  }
 }

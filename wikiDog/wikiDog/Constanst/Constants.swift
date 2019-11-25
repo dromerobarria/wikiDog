@@ -42,6 +42,7 @@ struct Constants
     
     struct General
     {
+      static let navTitle = NSLocalizedString("RAZAS", comment: "")
       static let navTextFirst = NSLocalizedString("WIKI", comment: "")
       static let navTextLast = NSLocalizedString("DOGS", comment: "")
     }
@@ -62,10 +63,11 @@ struct Api
     ///False Production
     static let debugURL = true
 
+   
     /// URL base.
-    static let baseURL = "http://localhost:3000" // Production
-    static let testUrl = "http://localhost:3000" // Developer
-    static let version = "/api/v1/"
+    static let baseURL = "http://dog.ceo" // Production
+    static let testUrl = "http://dog.ceo" // Developer
+    static let version = "/api"
   }
 }
 

@@ -11,7 +11,6 @@
 		21E9A3975FA3443EB5BF5943 /* Pods_wikiDog_wikiDogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B96AD70CD775C7FD42D3D5C /* Pods_wikiDog_wikiDogUITests.framework */; };
 		2902FF7EB4277BC49345AC0F /* Pods_wikiDogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC49F68044EF291B6326B54 /* Pods_wikiDogTests.framework */; };
 		FE750ADA238C27270004CF24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750AD9238C27270004CF24 /* AppDelegate.swift */; };
-		FE750ADE238C27270004CF24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750ADD238C27270004CF24 /* ViewController.swift */; };
 		FE750AE1238C27270004CF24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE750ADF238C27270004CF24 /* Main.storyboard */; };
 		FE750AE3238C272C0004CF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE750AE2238C272C0004CF24 /* Assets.xcassets */; };
 		FE750AF1238C272C0004CF24 /* wikiDogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750AF0238C272C0004CF24 /* wikiDogTests.swift */; };
@@ -26,6 +25,11 @@
 		FEC4F48B238C2FF2005B3A63 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F485238C2FF2005B3A63 /* MainInteractor.swift */; };
 		FEC4F48D238C3145005B3A63 /* doggie.json in Resources */ = {isa = PBXBuildFile; fileRef = FEC4F48C238C3145005B3A63 /* doggie.json */; };
 		FEC4F48F238C3649005B3A63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F48E238C3649005B3A63 /* Extensions.swift */; };
+		FEC4F493238C399E005B3A63 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F492238C399E005B3A63 /* APIRouter.swift */; };
+		FEC4F495238C39C4005B3A63 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F494238C39C4005B3A63 /* Breeds.swift */; };
+		FEC4F498238C3A3E005B3A63 /* ConnectivityWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F497238C3A3E005B3A63 /* ConnectivityWorker.swift */; };
+		FEC4F49B238C42C5005B3A63 /* BreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F49A238C42C5005B3A63 /* BreedCell.swift */; };
+		FEC4F49E238C435D005B3A63 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC4F49D238C435C005B3A63 /* TableCell.xib */; };
 		FEE43705238C2C2600BB11EF /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE43704238C2C2600BB11EF /* Splash.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +62,6 @@
 		E61FBCB5053751FD3FDDA575 /* Pods-wikiDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wikiDog.debug.xcconfig"; path = "Target Support Files/Pods-wikiDog/Pods-wikiDog.debug.xcconfig"; sourceTree = "<group>"; };
 		FE750AD6238C27270004CF24 /* wikiDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wikiDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE750AD9238C27270004CF24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE750ADD238C27270004CF24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE750AE0238C27270004CF24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE750AE2238C272C0004CF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE750AE7238C272C0004CF24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +81,11 @@
 		FEC4F485238C2FF2005B3A63 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		FEC4F48C238C3145005B3A63 /* doggie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doggie.json; sourceTree = "<group>"; };
 		FEC4F48E238C3649005B3A63 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FEC4F492238C399E005B3A63 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		FEC4F494238C39C4005B3A63 /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		FEC4F497238C3A3E005B3A63 /* ConnectivityWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityWorker.swift; sourceTree = "<group>"; };
+		FEC4F49A238C42C5005B3A63 /* BreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCell.swift; sourceTree = "<group>"; };
+		FEC4F49D238C435C005B3A63 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		FEE43704238C2C2600BB11EF /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				FE750AD9238C27270004CF24 /* AppDelegate.swift */,
+				FEC4F496238C3A34005B3A63 /* Workers */,
 				FEE43702238C2C0C00BB11EF /* Resources */,
 				FEE43701238C2BEF00BB11EF /* Scenes */,
 				FEE43700238C2BE500BB11EF /* Extensions */,
@@ -192,6 +201,7 @@
 		FEC4F47F238C2FD8005B3A63 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FEC4F499238C42BA005B3A63 /* Cell */,
 				FEC4F480238C2FF2005B3A63 /* MainPresenter.swift */,
 				FEC4F481238C2FF2005B3A63 /* MainWorker.swift */,
 				FEC4F482238C2FF2005B3A63 /* MainRouter.swift */,
@@ -202,9 +212,34 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		FEC4F496238C3A34005B3A63 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F497238C3A3E005B3A63 /* ConnectivityWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		FEC4F499238C42BA005B3A63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F49A238C42C5005B3A63 /* BreedCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEC4F49C238C4355005B3A63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F49D238C435C005B3A63 /* TableCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FEE436FB238C2BAF00BB11EF /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				FEC4F492238C399E005B3A63 /* APIRouter.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -227,6 +262,7 @@
 		FEE436FE238C2BD300BB11EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEC4F494238C39C4005B3A63 /* Breeds.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +270,7 @@
 		FEE436FF238C2BD900BB11EF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				FEC4F49C238C4355005B3A63 /* Cell */,
 				FEE43703238C2C2600BB11EF /* Splash */,
 				FE750ADF238C27270004CF24 /* Main.storyboard */,
 			);
@@ -253,7 +290,6 @@
 			children = (
 				FEC4F47F238C2FD8005B3A63 /* Main */,
 				FEE43706238C2CA600BB11EF /* LaunchScreen */,
-				FE750ADD238C27270004CF24 /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -396,6 +432,7 @@
 				FE750AE1238C27270004CF24 /* Main.storyboard in Resources */,
 				FEC4F48D238C3145005B3A63 /* doggie.json in Resources */,
 				FEE43705238C2C2600BB11EF /* Splash.storyboard in Resources */,
+				FEC4F49E238C435D005B3A63 /* TableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,11 +562,14 @@
 			files = (
 				FEC4F486238C2FF2005B3A63 /* MainPresenter.swift in Sources */,
 				FEC4F488238C2FF2005B3A63 /* MainRouter.swift in Sources */,
+				FEC4F49B238C42C5005B3A63 /* BreedCell.swift in Sources */,
 				FEC4F47E238C2DC8005B3A63 /* Constants.swift in Sources */,
 				FEC4F48B238C2FF2005B3A63 /* MainInteractor.swift in Sources */,
-				FE750ADE238C27270004CF24 /* ViewController.swift in Sources */,
 				FEC4F489238C2FF2005B3A63 /* MainModels.swift in Sources */,
 				FE750ADA238C27270004CF24 /* AppDelegate.swift in Sources */,
+				FEC4F498238C3A3E005B3A63 /* ConnectivityWorker.swift in Sources */,
+				FEC4F495238C39C4005B3A63 /* Breeds.swift in Sources */,
+				FEC4F493238C399E005B3A63 /* APIRouter.swift in Sources */,
 				FEC4F48A238C2FF2005B3A63 /* MainViewController.swift in Sources */,
 				FEC4F487238C2FF2005B3A63 /* MainWorker.swift in Sources */,
 				FEC4F48F238C3649005B3A63 /* Extensions.swift in Sources */,

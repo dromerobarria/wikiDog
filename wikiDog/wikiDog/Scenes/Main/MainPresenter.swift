@@ -14,13 +14,29 @@ import UIKit
 
 protocol MainPresentationLogic
 {
-  
+  func presentFetchDogs(response: Main.Requestbreeds.Response)
+  func presentSelectDog(response: Main.SelectBreeds.Response)
 }
 
 class MainPresenter: MainPresentationLogic
 {
   weak var viewController: MainDisplayLogic?
+
+  func presentFetchDogs(response: Main.Requestbreeds.Response)
+  {
+    switch response.isError {
+    case true:
+      let viewModel = Main.Requestbreeds.ViewModel(breeds: response.breeds, message: response.message)
+      viewController?.errorFetchDogs(viewModel: viewModel)
+    default:
+      let viewModel = Main.Requestbreeds.ViewModel(breeds: response.breeds, message: response.message)
+      viewController?.successFetchDogs(viewModel: viewModel)
+    }
+  }
   
-  // MARK: Do something
-  
+  func presentSelectDog(response: Main.SelectBreeds.Response)
+  {
+    let viewModel = Main.SelectBreeds.ViewModel()
+    viewController?.successSelectDogs(viewModel: viewModel)
+  }
 }

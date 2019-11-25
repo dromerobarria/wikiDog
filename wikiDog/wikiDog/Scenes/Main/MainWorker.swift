@@ -11,8 +11,39 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainWorker
 {
- 
+  func getBreeds(completionHandler: @escaping (_ isOk: Bool,_ breeds: NSDictionary,_ message: String) -> Void) {
+     
+     if Connectivity.isConnectedToInternet
+     {
+      _ = Alamofire.request(APIRouter.getDogs).responseJSON{ (response) in
+         switch response.result{
+         case .success(let value):
+           
+          let jsonValue = value as! [String: Any]
+          let status = jsonValue["status"] as? String ?? ""
+           
+          if status == "success"
+          {
+            let breeds = jsonValue["message"] as! NSDictionary
+            completionHandler(true,breeds,"")
+          }else
+          {
+            completionHandler(false,[:],Constants.Messages.Api.serverErrorText)
+          }
+           
+         case .failure:
+          completionHandler(false,[:],Constants.Messages.Api.serverErrorText)
+           break
+         }
+       }
+     }else
+     {
+      completionHandler(false,[:],Constants.Messages.Api.internetText)
+     }
+     
+   }
 }

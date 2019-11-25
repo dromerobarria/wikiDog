@@ -14,19 +14,55 @@ import UIKit
 
 protocol MainBusinessLogic
 {
- 
+  func loadBreedsRequest(request: Main.Requestbreeds.Request)
+  func selectBreeds(request: Main.SelectBreeds.Request)
 }
 
 protocol MainDataStore
 {
-  //var name: String { get set }
+  var name: String { get set }
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore
 {
   var presenter: MainPresentationLogic?
   var worker: MainWorker?
- 
-  // MARK: Do something
+  var name: String = ""
+  
+  func loadBreedsRequest(request: Main.Requestbreeds.Request)
+  {
+    worker = MainWorker()
+    worker?.getBreeds()
+      {[] (isOk,breeds,message) in
+       switch isOk
+        {
+        case true:
+          
+          Breeds.updateBreeds(breeds: breeds)
+          /*
+          for breed in message
+          {
+            let TFbreed = Breeds()
+            TFbreed.name = breed.key as! String
+            TFbreed.save()
+          }*/
+          
+          let breeds = Breeds.all()
+          let response = Main.Requestbreeds.Response(breeds:breeds, isError: false, message: "")
+          self.presenter?.presentFetchDogs(response: response)
+        case false:
+          let breeds = Breeds.all()
+          let response = Main.Requestbreeds.Response(breeds:breeds, isError: true, message: message)
+          self.presenter?.presentFetchDogs(response: response)
+        }
+    }
+  }
+  
+  func selectBreeds(request: Main.SelectBreeds.Request)
+  {
+    self.name = request.name
+    let response = Main.SelectBreeds.Response()
+    self.presenter?.presentSelectDog(response: response)
+  }
   
 }

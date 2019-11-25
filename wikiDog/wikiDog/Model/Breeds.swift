@@ -61,16 +61,17 @@ extension Breeds
   
   class func getTypes(breeds: Breeds) -> String
   {
-    var types = ""
+    var types = "\(Constants.Messages.General.subTitle):"
     
     for (index,typeValue) in breeds.types.enumerated()
       {
+        
         if index == 0
         {
-          types = typeValue.type
+          types = types + "🐕" + typeValue.type
         }else
         {
-          types = types + "/" + typeValue.type
+          types = types + "- 🐕" + typeValue.type
         }
       }
      return types
@@ -97,7 +98,7 @@ extension Breeds
           let typeString =  type as? String ?? "NoN"
           
           let breedType = BreedTypes()
-          breedType.type = breed.key as! String
+          breedType.type = typeString
           breedDB.types.append(breedType)
         }
         breedDB.save()

@@ -21,7 +21,8 @@ struct Constants
   /// Images used in the App.
   struct Images
   {
-     static let ic_asset_icon = UIImage(named: "ic_asset_icon")
+    static let ic_asset_dogPlaceholder = UIImage(named: "ic_asset_dogPlaceholder")
+    static let ic_asset_icon = UIImage(named: "ic_asset_icon")
   }
   
   /// Colors used in the App.
@@ -43,8 +44,11 @@ struct Constants
     struct General
     {
       static let navTitle = NSLocalizedString("RAZAS", comment: "")
-      static let navTextFirst = NSLocalizedString("WIKI", comment: "")
+      static let searchTitle = NSLocalizedString("BUSCAR RAZAS", comment: "")
+      static let subTitle = NSLocalizedString("TIPOS", comment: "")
+      static let navTextFirst = NSLocalizedString("WIKI🐶", comment: "")
       static let navTextLast = NSLocalizedString("DOGS", comment: "")
+      static let searchCancelText = NSLocalizedString("Cancelar", comment: "")
     }
     
     struct Api {

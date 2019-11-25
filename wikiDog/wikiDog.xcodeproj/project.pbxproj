@@ -10,6 +10,14 @@
 		1360077322871805742CCF51 /* Pods_wikiDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31433A39ECEF88603FBDC /* Pods_wikiDog.framework */; };
 		21E9A3975FA3443EB5BF5943 /* Pods_wikiDog_wikiDogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B96AD70CD775C7FD42D3D5C /* Pods_wikiDog_wikiDogUITests.framework */; };
 		2902FF7EB4277BC49345AC0F /* Pods_wikiDogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC49F68044EF291B6326B54 /* Pods_wikiDogTests.framework */; };
+		FE393709238C54A900E1268A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE393708238C54A900E1268A /* Detail.storyboard */; };
+		FE393711238C54FD00E1268A /* DogsImagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370B238C54FD00E1268A /* DogsImagesPresenter.swift */; };
+		FE393712238C54FD00E1268A /* DogsImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370C238C54FD00E1268A /* DogsImagesWorker.swift */; };
+		FE393713238C54FD00E1268A /* DogsImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370D238C54FD00E1268A /* DogsImagesRouter.swift */; };
+		FE393714238C54FD00E1268A /* DogsImagesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370E238C54FD00E1268A /* DogsImagesModels.swift */; };
+		FE393715238C54FD00E1268A /* DogsImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370F238C54FD00E1268A /* DogsImagesViewController.swift */; };
+		FE393716238C54FD00E1268A /* DogsImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE393710238C54FD00E1268A /* DogsImagesInteractor.swift */; };
+		FE393719238C575200E1268A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE393718238C575200E1268A /* ImageCollectionViewCell.swift */; };
 		FE750ADA238C27270004CF24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750AD9238C27270004CF24 /* AppDelegate.swift */; };
 		FE750AE1238C27270004CF24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE750ADF238C27270004CF24 /* Main.storyboard */; };
 		FE750AE3238C272C0004CF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE750AE2238C272C0004CF24 /* Assets.xcassets */; };
@@ -60,6 +68,14 @@
 		DAC49F68044EF291B6326B54 /* Pods_wikiDogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wikiDogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A31433A39ECEF88603FBDC /* Pods_wikiDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wikiDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61FBCB5053751FD3FDDA575 /* Pods-wikiDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wikiDog.debug.xcconfig"; path = "Target Support Files/Pods-wikiDog/Pods-wikiDog.debug.xcconfig"; sourceTree = "<group>"; };
+		FE393708238C54A900E1268A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		FE39370B238C54FD00E1268A /* DogsImagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesPresenter.swift; sourceTree = "<group>"; };
+		FE39370C238C54FD00E1268A /* DogsImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesWorker.swift; sourceTree = "<group>"; };
+		FE39370D238C54FD00E1268A /* DogsImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesRouter.swift; sourceTree = "<group>"; };
+		FE39370E238C54FD00E1268A /* DogsImagesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesModels.swift; sourceTree = "<group>"; };
+		FE39370F238C54FD00E1268A /* DogsImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesViewController.swift; sourceTree = "<group>"; };
+		FE393710238C54FD00E1268A /* DogsImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesInteractor.swift; sourceTree = "<group>"; };
+		FE393718238C575200E1268A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FE750AD6238C27270004CF24 /* wikiDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wikiDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE750AD9238C27270004CF24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE750AE0238C27270004CF24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +154,45 @@
 				92D08B1FF9F39871EFF8B099 /* Pods-wikiDogTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FE393706238C547B00E1268A /* Breeds */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F49C238C4355005B3A63 /* Cell */,
+				FE750ADF238C27270004CF24 /* Main.storyboard */,
+			);
+			path = Breeds;
+			sourceTree = "<group>";
+		};
+		FE393707238C549300E1268A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FE393708238C54A900E1268A /* Detail.storyboard */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FE39370A238C54E400E1268A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FE393717238C574800E1268A /* Cell */,
+				FE39370B238C54FD00E1268A /* DogsImagesPresenter.swift */,
+				FE39370C238C54FD00E1268A /* DogsImagesWorker.swift */,
+				FE39370D238C54FD00E1268A /* DogsImagesRouter.swift */,
+				FE39370E238C54FD00E1268A /* DogsImagesModels.swift */,
+				FE39370F238C54FD00E1268A /* DogsImagesViewController.swift */,
+				FE393710238C54FD00E1268A /* DogsImagesInteractor.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FE393717238C574800E1268A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE393718238C575200E1268A /* ImageCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FE750ACD238C27270004CF24 = {
@@ -270,9 +325,9 @@
 		FEE436FF238C2BD900BB11EF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				FEC4F49C238C4355005B3A63 /* Cell */,
+				FE393707238C549300E1268A /* Images */,
+				FE393706238C547B00E1268A /* Breeds */,
 				FEE43703238C2C2600BB11EF /* Splash */,
-				FE750ADF238C27270004CF24 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -288,6 +343,7 @@
 		FEE43701238C2BEF00BB11EF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FE39370A238C54E400E1268A /* Images */,
 				FEC4F47F238C2FD8005B3A63 /* Main */,
 				FEE43706238C2CA600BB11EF /* LaunchScreen */,
 			);
@@ -330,7 +386,7 @@
 				FE750AD2238C27270004CF24 /* Sources */,
 				FE750AD3238C27270004CF24 /* Frameworks */,
 				FE750AD4238C27270004CF24 /* Resources */,
-				936C1C823A4F55E11680E2A5 /* [CP] Embed Pods Frameworks */,
+				E3450B4C812F311C35DD4CBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -368,7 +424,7 @@
 				FE750AF3238C272C0004CF24 /* Sources */,
 				FE750AF4238C272C0004CF24 /* Frameworks */,
 				FE750AF5238C272C0004CF24 /* Resources */,
-				2A330B97DEF81F586859179A /* [CP] Embed Pods Frameworks */,
+				A1670E665ABA21B4CFE2A0D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,6 +489,7 @@
 				FEC4F48D238C3145005B3A63 /* doggie.json in Resources */,
 				FEE43705238C2C2600BB11EF /* Splash.storyboard in Resources */,
 				FEC4F49E238C435D005B3A63 /* TableCell.xib in Resources */,
+				FE393709238C54A900E1268A /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,23 +510,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A330B97DEF81F586859179A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wikiDog-wikiDogUITests/Pods-wikiDog-wikiDogUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wikiDog-wikiDogUITests/Pods-wikiDog-wikiDogUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wikiDog-wikiDogUITests/Pods-wikiDog-wikiDogUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		77C5CD01B7EAA475529D87CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,7 +554,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		936C1C823A4F55E11680E2A5 /* [CP] Embed Pods Frameworks */ = {
+		A1670E665ABA21B4CFE2A0D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wikiDog-wikiDogUITests/Pods-wikiDog-wikiDogUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wikiDog-wikiDogUITests/Pods-wikiDog-wikiDogUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wikiDog-wikiDogUITests/Pods-wikiDog-wikiDogUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3450B4C812F311C35DD4CBF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -563,17 +620,24 @@
 				FEC4F486238C2FF2005B3A63 /* MainPresenter.swift in Sources */,
 				FEC4F488238C2FF2005B3A63 /* MainRouter.swift in Sources */,
 				FEC4F49B238C42C5005B3A63 /* BreedCell.swift in Sources */,
+				FE393719238C575200E1268A /* ImageCollectionViewCell.swift in Sources */,
 				FEC4F47E238C2DC8005B3A63 /* Constants.swift in Sources */,
 				FEC4F48B238C2FF2005B3A63 /* MainInteractor.swift in Sources */,
+				FE393711238C54FD00E1268A /* DogsImagesPresenter.swift in Sources */,
 				FEC4F489238C2FF2005B3A63 /* MainModels.swift in Sources */,
 				FE750ADA238C27270004CF24 /* AppDelegate.swift in Sources */,
 				FEC4F498238C3A3E005B3A63 /* ConnectivityWorker.swift in Sources */,
 				FEC4F495238C39C4005B3A63 /* Breeds.swift in Sources */,
+				FE393715238C54FD00E1268A /* DogsImagesViewController.swift in Sources */,
 				FEC4F493238C399E005B3A63 /* APIRouter.swift in Sources */,
+				FE393713238C54FD00E1268A /* DogsImagesRouter.swift in Sources */,
 				FEC4F48A238C2FF2005B3A63 /* MainViewController.swift in Sources */,
 				FEC4F487238C2FF2005B3A63 /* MainWorker.swift in Sources */,
+				FE393714238C54FD00E1268A /* DogsImagesModels.swift in Sources */,
 				FEC4F48F238C3649005B3A63 /* Extensions.swift in Sources */,
+				FE393712238C54FD00E1268A /* DogsImagesWorker.swift in Sources */,
 				FEC4F47C238C2D22005B3A63 /* LaunchScreenViewController.swift in Sources */,
+				FE393716238C54FD00E1268A /* DogsImagesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -724,7 +788,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

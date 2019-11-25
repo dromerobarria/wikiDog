@@ -13,7 +13,8 @@ target 'wikiDog' do
    pod 'RealmSwift'
    # Pods Animations
    pod 'lottie-ios'
-   
+   # Pods Images
+   pod 'Kingfisher'
    
   target 'wikiDogTests' do
     inherit! :search_paths

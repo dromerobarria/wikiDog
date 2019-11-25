@@ -61,16 +61,17 @@ extension Breeds
   
   class func getTypes(breeds: Breeds) -> String
   {
-    var types = ""
+    var types = "\(Constants.Messages.General.subTitle):"
     
     for (index,typeValue) in breeds.types.enumerated()
       {
+        
         if index == 0
         {
-          types = typeValue.type
+          types = types + "🐕" + typeValue.type
         }else
         {
-          types = types + "/" + typeValue.type
+          types = types + "- 🐕" + typeValue.type
         }
       }
      return types
@@ -97,7 +98,7 @@ extension Breeds
           let typeString =  type as? String ?? "NoN"
           
           let breedType = BreedTypes()
-          breedType.type = breed.key as! String
+          breedType.type = typeString
           breedDB.types.append(breedType)
         }
         breedDB.save()
@@ -124,6 +125,7 @@ extension Breeds
 }
 
 
+
 class BImages: Object
 {
   
@@ -136,6 +138,25 @@ class BImages: Object
   
 }
 
+extension BImages
+{
+  class func updateImagesBreeds(breed: Breeds,images:NSArray)
+  {
+     let realm = try! Realm()
+     let ofImages = realm.objects(BImages.self)
+     try! realm.write
+     {
+       realm.delete(ofImages)
+     }
+    
+     for image in images
+     {
+       breed.addImage(link: image as! String)
+     }
+    
+  }
+
+}
 
 
 class BreedTypes: Object

@@ -24,12 +24,17 @@ class MainPresenter: MainPresentationLogic
 
   func presentFetchDogs(response: Main.Requestbreeds.Response)
   {
-    switch response.isError {
+    
+    let isError = response.isError
+    let message = response.message
+    let breeds  = response.breeds
+    
+    switch isError {
     case true:
-      let viewModel = Main.Requestbreeds.ViewModel(breeds: response.breeds, message: response.message)
+      let viewModel = Main.Requestbreeds.ViewModel(breeds: breeds, message: message)
       viewController?.errorFetchDogs(viewModel: viewModel)
     default:
-      let viewModel = Main.Requestbreeds.ViewModel(breeds: response.breeds, message: response.message)
+      let viewModel = Main.Requestbreeds.ViewModel(breeds: breeds, message: message)
       viewController?.successFetchDogs(viewModel: viewModel)
     }
   }

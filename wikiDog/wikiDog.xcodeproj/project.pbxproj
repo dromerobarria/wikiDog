@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		FE750ADA238C27270004CF24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750AD9238C27270004CF24 /* AppDelegate.swift */; };
-		FE750ADC238C27270004CF24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750ADB238C27270004CF24 /* SceneDelegate.swift */; };
 		FE750ADE238C27270004CF24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750ADD238C27270004CF24 /* ViewController.swift */; };
 		FE750AE1238C27270004CF24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE750ADF238C27270004CF24 /* Main.storyboard */; };
 		FE750AE3238C272C0004CF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE750AE2238C272C0004CF24 /* Assets.xcassets */; };
 		FE750AE6238C272C0004CF24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE750AE4238C272C0004CF24 /* LaunchScreen.storyboard */; };
 		FE750AF1238C272C0004CF24 /* wikiDogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750AF0238C272C0004CF24 /* wikiDogTests.swift */; };
 		FE750AFC238C272C0004CF24 /* wikiDogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750AFB238C272C0004CF24 /* wikiDogUITests.swift */; };
+		FEC4F47C238C2D22005B3A63 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F47B238C2D22005B3A63 /* LaunchScreenViewController.swift */; };
+		FEC4F47E238C2DC8005B3A63 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4F47D238C2DC8005B3A63 /* Constants.swift */; };
+		FEE43705238C2C2600BB11EF /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE43704238C2C2600BB11EF /* Splash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		FE750AD6238C27270004CF24 /* wikiDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wikiDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE750AD9238C27270004CF24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE750ADB238C27270004CF24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FE750ADD238C27270004CF24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE750AE0238C27270004CF24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE750AE2238C272C0004CF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		FE750AF7238C272C0004CF24 /* wikiDogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wikiDogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE750AFB238C272C0004CF24 /* wikiDogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wikiDogUITests.swift; sourceTree = "<group>"; };
 		FE750AFD238C272C0004CF24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC4F47B238C2D22005B3A63 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		FEC4F47D238C2DC8005B3A63 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FEE43704238C2C2600BB11EF /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				FE750AD9238C27270004CF24 /* AppDelegate.swift */,
-				FE750ADB238C27270004CF24 /* SceneDelegate.swift */,
-				FE750ADD238C27270004CF24 /* ViewController.swift */,
-				FE750ADF238C27270004CF24 /* Main.storyboard */,
-				FE750AE2238C272C0004CF24 /* Assets.xcassets */,
-				FE750AE4238C272C0004CF24 /* LaunchScreen.storyboard */,
+				FEE43702238C2C0C00BB11EF /* Resources */,
+				FEE43701238C2BEF00BB11EF /* Scenes */,
+				FEE43700238C2BE500BB11EF /* Extensions */,
+				FEE436FF238C2BD900BB11EF /* Storyboards */,
+				FEE436FE238C2BD300BB11EF /* Model */,
+				FEE436FD238C2BCC00BB11EF /* Utils */,
+				FEE436FC238C2BC000BB11EF /* Constanst */,
+				FEE436FB238C2BAF00BB11EF /* Api */,
 				FE750AE7238C272C0004CF24 /* Info.plist */,
 			);
 			path = wikiDog;
@@ -126,6 +133,85 @@
 				FE750AFD238C272C0004CF24 /* Info.plist */,
 			);
 			path = wikiDogUITests;
+			sourceTree = "<group>";
+		};
+		FEE436FB238C2BAF00BB11EF /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		FEE436FC238C2BC000BB11EF /* Constanst */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F47D238C2DC8005B3A63 /* Constants.swift */,
+			);
+			path = Constanst;
+			sourceTree = "<group>";
+		};
+		FEE436FD238C2BCC00BB11EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FEE436FE238C2BD300BB11EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEE436FF238C2BD900BB11EF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FE750ADF238C27270004CF24 /* Main.storyboard */,
+				FE750AE4238C272C0004CF24 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FEE43700238C2BE500BB11EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FEE43701238C2BEF00BB11EF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FEE43706238C2CA600BB11EF /* LaunchScreen */,
+				FE750ADD238C27270004CF24 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FEE43702238C2C0C00BB11EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FEE43703238C2C2600BB11EF /* Splash */,
+				FE750AE2238C272C0004CF24 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FEE43703238C2C2600BB11EF /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				FEE43704238C2C2600BB11EF /* Splash.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		FEE43706238C2CA600BB11EF /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F47B238C2D22005B3A63 /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +321,7 @@
 				FE750AE6238C272C0004CF24 /* LaunchScreen.storyboard in Resources */,
 				FE750AE3238C272C0004CF24 /* Assets.xcassets in Resources */,
 				FE750AE1238C27270004CF24 /* Main.storyboard in Resources */,
+				FEE43705238C2C2600BB11EF /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +346,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC4F47E238C2DC8005B3A63 /* Constants.swift in Sources */,
 				FE750ADE238C27270004CF24 /* ViewController.swift in Sources */,
 				FE750ADA238C27270004CF24 /* AppDelegate.swift in Sources */,
-				FE750ADC238C27270004CF24 /* SceneDelegate.swift in Sources */,
+				FEC4F47C238C2D22005B3A63 /* LaunchScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

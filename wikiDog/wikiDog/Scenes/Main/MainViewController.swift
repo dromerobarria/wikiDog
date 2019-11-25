@@ -28,10 +28,21 @@ class MainViewController: UITableViewController, MainDisplayLogic,ActivityIndica
   
   
   // MARK: Object lifecycle
+
   var activityIndicator = UIActivityIndicatorView()
   let realm = try! Realm()
   var breeds: Results<Breeds>!
+  var filteredBreeds: Results<Breeds>!
   
+  var isSearchBarEmpty: Bool {
+    return searchController.searchBar.text?.isEmpty ?? true
+  }
+ 
+  var isFiltering: Bool {
+    return searchController.isActive && !isSearchBarEmpty
+  }
+  
+  let searchController = UISearchController(searchResultsController: nil)
   static let tableViewCellIdentifier = "cellID"
   private static let nibName = "TableCell"
   
@@ -82,6 +93,20 @@ class MainViewController: UITableViewController, MainDisplayLogic,ActivityIndica
     super.viewDidLoad()
     configureView()
     configureNavegationBar()
+    
+    searchController.searchResultsUpdater = self
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = Constants.Messages.General.searchTitle
+    searchController.searchBar.setValue(Constants.Messages.General.searchCancelText, forKey: "cancelButtonText")
+    
+    if #available(iOS 11.0, *) {
+       navigationItem.searchController = searchController
+       navigationItem.hidesSearchBarWhenScrolling = false
+    } else {
+       tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    definesPresentationContext = true
   }
 
   
@@ -91,12 +116,18 @@ class MainViewController: UITableViewController, MainDisplayLogic,ActivityIndica
     self.title = Constants.Messages.General.navTitle
     self.breeds = Breeds.all().sorted(byKeyPath: "name", ascending: true)
   
+    self.refreshControl = UIRefreshControl()
+           //self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    self.refreshControl!.addTarget(self, action: Selector(("refresh:")), for: UIControl.Event.valueChanged)
+           self.tableView.addSubview(refreshControl!)
+    
     let nib = UINib(nibName: MainViewController.nibName, bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: MainViewController.tableViewCellIdentifier)
     
     tableView.showsVerticalScrollIndicator = false
     tableView.backgroundColor =  .white
     tableView.separatorStyle = .none
+    //tableView.addSubview(self.refreshControl)
     
     self.view.backgroundColor = Constants.Colors.backgroundColor
     
@@ -120,6 +151,19 @@ class MainViewController: UITableViewController, MainDisplayLogic,ActivityIndica
   }
   
   
+  @objc func refresh(_ refreshControl: UIRefreshControl) {
+    self.showActivityIndicator()
+    let request = Main.Requestbreeds.Request()
+    interactor?.loadBreedsRequest(request: request)
+    refreshControl.endRefreshing()
+  }
+  
+  func filterContentForSearchText(_ searchText: String)
+  {
+    self.filteredBreeds = Breeds.all().sorted(byKeyPath: "name", ascending: true).filter("name CONTAINS[c] %@", searchText)
+    self.tableView.reloadData()
+  }
+  
   func successFetchDogs(viewModel: Main.Requestbreeds.ViewModel)
    {
      self.hideActivityIndicator()
@@ -134,7 +178,7 @@ class MainViewController: UITableViewController, MainDisplayLogic,ActivityIndica
    
    func successSelectDogs(viewModel: Main.SelectBreeds.ViewModel)
    {
-      //router?.routeToDogsImages(segue: nil)
+      router?.routeToDogsImages(segue: nil)
    }
 }
 
@@ -143,6 +187,11 @@ extension MainViewController {
    // MARK: - Table view data source
   override func numberOfSections(in tableView: UITableView) -> Int
    {
+    
+     if isFiltering {
+       return filteredBreeds.count
+     }
+    
      guard self.breeds.isEmpty  else {
        return self.breeds.count
      }
@@ -168,26 +217,39 @@ extension MainViewController {
    }
    
    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-     if self.breeds[indexPath.section].types.count > 0
-     {
-        return 100
-     }else
-     {
-      return 50
-     }
+     return 80
    }
    
    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
    {
-    let cell = tableView.dequeueReusableCell(withIdentifier: MainViewController.tableViewCellIdentifier, for: indexPath) as! BreedCell
+     let cell = tableView.dequeueReusableCell(withIdentifier: MainViewController.tableViewCellIdentifier, for: indexPath) as! BreedCell
      cell.selectionStyle = .none
-     cell.breed = self.breeds[indexPath.section]
+    
+     if isFiltering {
+       cell.breed = self.filteredBreeds[indexPath.section]
+     } else {
+       cell.breed = self.breeds[indexPath.section]
+     }
+    
      return cell
    }
    
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     let request = Main.SelectBreeds.Request(name: self.breeds[indexPath.section].name)
-     interactor?.selectBreeds(request: request)
+    
+     if isFiltering {
+        let request = Main.SelectBreeds.Request(name: self.filteredBreeds[indexPath.section].name)
+        interactor?.selectBreeds(request: request)
+     } else {
+        let request = Main.SelectBreeds.Request(name: self.breeds[indexPath.section].name)
+        interactor?.selectBreeds(request: request)
+     }
    }
  }
+
+extension MainViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    filterContentForSearchText(searchBar.text!)
+  }
+}

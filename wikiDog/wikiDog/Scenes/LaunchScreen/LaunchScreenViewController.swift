@@ -22,10 +22,6 @@ class LaunchScreenViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 35)
       
         let fullString = NSMutableAttributedString(string: Constants.Messages.General.navTextFirst)
-        let image1Attachment = NSTextAttachment()
-        image1Attachment.image = Constants.Images.ic_asset_icon
-        let image1String = NSAttributedString(attachment: image1Attachment)
-        fullString.append(image1String)
         fullString.append(NSAttributedString(string: Constants.Messages.General.navTextLast))
         label.attributedText = fullString
         label.alpha = 0

@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.9.1)
+  - lottie-ios (3.1.5)
+  - Realm (4.1.1):
+    - Realm/Headers (= 4.1.1)
+  - Realm/Headers (4.1.1)
+  - RealmSwift (4.1.1):
+    - Realm (= 4.1.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - lottie-ios
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - lottie-ios
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
+  RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
+
+PODFILE CHECKSUM: 7d070ba050827235c3623b47feb6a2323f419e4c
+
+COCOAPODS: 1.8.4

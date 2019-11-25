@@ -10,6 +10,10 @@
 		1360077322871805742CCF51 /* Pods_wikiDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31433A39ECEF88603FBDC /* Pods_wikiDog.framework */; };
 		21E9A3975FA3443EB5BF5943 /* Pods_wikiDog_wikiDogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B96AD70CD775C7FD42D3D5C /* Pods_wikiDog_wikiDogUITests.framework */; };
 		2902FF7EB4277BC49345AC0F /* Pods_wikiDogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC49F68044EF291B6326B54 /* Pods_wikiDogTests.framework */; };
+		FE1309C7238C68CB0012EDDE /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1309C3238C68CB0012EDDE /* MainViewControllerTests.swift */; };
+		FE1309C8238C68CB0012EDDE /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1309C4238C68CB0012EDDE /* MainInteractorTests.swift */; };
+		FE1309C9238C68CB0012EDDE /* MainWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1309C5238C68CB0012EDDE /* MainWorkerTests.swift */; };
+		FE1309CA238C68CB0012EDDE /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1309C6238C68CB0012EDDE /* MainPresenterTests.swift */; };
 		FE393709238C54A900E1268A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE393708238C54A900E1268A /* Detail.storyboard */; };
 		FE393711238C54FD00E1268A /* DogsImagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370B238C54FD00E1268A /* DogsImagesPresenter.swift */; };
 		FE393712238C54FD00E1268A /* DogsImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39370C238C54FD00E1268A /* DogsImagesWorker.swift */; };
@@ -68,6 +72,10 @@
 		DAC49F68044EF291B6326B54 /* Pods_wikiDogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wikiDogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A31433A39ECEF88603FBDC /* Pods_wikiDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wikiDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61FBCB5053751FD3FDDA575 /* Pods-wikiDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wikiDog.debug.xcconfig"; path = "Target Support Files/Pods-wikiDog/Pods-wikiDog.debug.xcconfig"; sourceTree = "<group>"; };
+		FE1309C3238C68CB0012EDDE /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		FE1309C4238C68CB0012EDDE /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		FE1309C5238C68CB0012EDDE /* MainWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerTests.swift; sourceTree = "<group>"; };
+		FE1309C6238C68CB0012EDDE /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		FE393708238C54A900E1268A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		FE39370B238C54FD00E1268A /* DogsImagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesPresenter.swift; sourceTree = "<group>"; };
 		FE39370C238C54FD00E1268A /* DogsImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsImagesWorker.swift; sourceTree = "<group>"; };
@@ -156,6 +164,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FE1309CB238C68CF0012EDDE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FE1309CC238C68D60012EDDE /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FE1309CC238C68D60012EDDE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FE1309C3238C68CB0012EDDE /* MainViewControllerTests.swift */,
+				FE1309C4238C68CB0012EDDE /* MainInteractorTests.swift */,
+				FE1309C5238C68CB0012EDDE /* MainWorkerTests.swift */,
+				FE1309C6238C68CB0012EDDE /* MainPresenterTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		FE393706238C547B00E1268A /* Breeds */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +265,7 @@
 		FE750AEF238C272C0004CF24 /* wikiDogTests */ = {
 			isa = PBXGroup;
 			children = (
+				FE1309CB238C68CF0012EDDE /* Scenes */,
 				FE750AF0238C272C0004CF24 /* wikiDogTests.swift */,
 				FE750AF2238C272C0004CF24 /* Info.plist */,
 			);
@@ -646,6 +674,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE750AF1238C272C0004CF24 /* wikiDogTests.swift in Sources */,
+				FE1309C8238C68CB0012EDDE /* MainInteractorTests.swift in Sources */,
+				FE1309CA238C68CB0012EDDE /* MainPresenterTests.swift in Sources */,
+				FE1309C9238C68CB0012EDDE /* MainWorkerTests.swift in Sources */,
+				FE1309C7238C68CB0012EDDE /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -125,6 +125,7 @@ extension Breeds
 }
 
 
+
 class BImages: Object
 {
   
@@ -137,6 +138,25 @@ class BImages: Object
   
 }
 
+extension BImages
+{
+  class func updateImagesBreeds(breed: Breeds,images:NSArray)
+  {
+     let realm = try! Realm()
+     let ofImages = realm.objects(BImages.self)
+     try! realm.write
+     {
+       realm.delete(ofImages)
+     }
+    
+     for image in images
+     {
+       breed.addImage(link: image as! String)
+     }
+    
+  }
+
+}
 
 
 class BreedTypes: Object

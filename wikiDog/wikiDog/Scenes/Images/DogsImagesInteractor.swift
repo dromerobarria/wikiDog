@@ -28,7 +28,6 @@ class DogsImagesInteractor: DogsImagesBusinessLogic, DogsImagesDataStore
   var presenter: DogsImagesPresentationLogic?
   var worker: DogsImagesWorker?
   var name: String = ""
-  let realm = try! Realm()
 
   func loadBreedsImages(request: DogsImages.Images.Request)
   {
@@ -39,19 +38,8 @@ class DogsImagesInteractor: DogsImagesBusinessLogic, DogsImagesDataStore
          {
          case true:
           
+           BImages.updateImagesBreeds(breed: Breeds.query(name: self.name), images: images!)
            let breed = Breeds.query(name: self.name)
-          
-           let ofImages = self.realm.objects(BImages.self)
-           try! self.realm.write
-           {
-             self.realm.delete(ofImages)
-           }
-           
-           for image in images!
-           {
-             breed.addImage(link: image as! String)
-           }
-           
            let response = DogsImages.Images.Response(isError: false, message: "", breed: breed)
            self.presenter?.presentImagesDogs(response: response)
          case false:
